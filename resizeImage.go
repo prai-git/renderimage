@@ -24,7 +24,7 @@ func main() {
 
 	// resize to width 1000 using Lanczos resampling
 	// and preserve aspect ratio
-	m := resize.Resize(460, 0, img, resize.Lanczos3)
+	m := resize.Resize(7060, 0, img, resize.Lanczos3)
 
 	out, err := os.Create("test_resized.jpg")
 	if err != nil {

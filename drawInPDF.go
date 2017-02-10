@@ -1,23 +1,15 @@
 package main
 
 import (
-	"image"
 	"image/color"
 
-	"fmt"
-
-	"github.com/llgcode/draw2d/draw2dimg"
+	"github.com/llgcode/draw2d/draw2dpdf"
 )
 
-func main() {
-	fmt.Println("Parjanya Rai")
-}
-
-func mainsdf() {
+func main123() {
 	// Initialize the graphic context on an RGBA image
-	dest := image.NewRGBA(image.Rect(0, 0, 297, 210.0))
-	gc := draw2dimg.NewGraphicContext(dest)
-	//helloworld.draw(gc, "pankaj")
+	dest := draw2dpdf.NewPdf("L", "mm", "A4")
+	gc := draw2dpdf.NewGraphicContext(dest)
 
 	// Set some properties
 	gc.SetFillColor(color.RGBA{0x44, 0xff, 0x44, 0xff})
@@ -32,5 +24,5 @@ func mainsdf() {
 	gc.FillStroke()
 
 	// Save to file
-	draw2dimg.SaveToPngFile("hello.png", dest)
+	draw2dpdf.SaveToPdfFile("hello.pdf", dest)
 }
